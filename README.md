@@ -1,0 +1,5 @@
+# React Native useRef Hook: Unexpected Null After Mount
+
+This repository demonstrates a common issue encountered when using the `useRef` hook in React Native functional components.  The problem involves the `current` property of the ref unexpectedly being null, even after component mount and render.  This often occurs when accessing the property within a function triggered soon after mount, such as in `useEffect` with an empty dependency array.
+
+The `UnexpectedNullRef.js` file showcases the bug. `FixedNullRef.js` provides a corrected implementation to avoid this issue.  The solution involves ensuring the ref's `current` property is accessed only after the component has fully mounted and the ref has been properly assigned.  This is achieved by using `useEffect` with a dependency array containing the ref's `current` property.
